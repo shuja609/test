@@ -1,0 +1,32 @@
+[tool.poetry]
+name = "test"
+version = "0.1.0"
+description = "InteGrow generated project: test"
+authors = ["InteGrow AI <ai@integrow.app>"]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+fastapi = "^0.109.0"
+uvicorn = {extras = ["standard"], version = "^0.27.0"}
+sqlmodel = "^0.0.14"
+pydantic-settings = "^2.1.0"
+python-multipart = "^0.0.7"
+httpx = "^0.26.0"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.0.0"
+pytest-asyncio = "^0.23.0"
+black = "^24.1.0"
+isort = "^5.13.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.pytest.ini_options]
+pythonpath = "."
+testpaths = ["tests"]
+filterwarnings = [
+    "ignore::DeprecationWarning",
+    "ignore::UserWarning",
+]
