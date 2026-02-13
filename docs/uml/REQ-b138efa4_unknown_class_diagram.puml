@@ -1,0 +1,65 @@
+@startuml
+class Item {
+  -id: UUID
+  -name: String
+  -description: String
+  -category: Category
+  -quantity: Integer
+  +addItem(): void
+  +updateItem(): void
+  +deleteItem(): void
+  +getDescription(): String
+}
+
+class Category {
+  -id: UUID
+  -name: String
+  +addCategory(): void
+  +updateCategory(): void
+  +deleteCategory(): void
+}
+
+class Inventory {
+  -id: UUID
+  -items: List<Item>
+  -categories: List<Category>
+  +addItemToInventory(Item): void
+  +removeItemFromInventory(Item): void
+  +getTotalItems(): Integer
+  +getCategories(): List<Category>
+}
+
+class User {
+  -id: UUID
+  -username: String
+  -email: String
+  -password: String
+  -inventory: Inventory
+  +login(): Boolean
+  +logout(): void
+  +updateProfile(): void
+  +getInventory(): Inventory
+}
+
+class Error {
+  -message: String
+  -code: Integer
+  +displayError(): void
+}
+
+class System {
+  -version: String
+  -lastUpdated: DateTime
+  +handleError(Error): void
+  +validateInput(): Boolean
+}
+
+User "1" -- "1" Inventory : owns >
+Inventory "1" -- "*" Item : contains >
+Item "1" -- "1" Category : belongsTo >
+Category "1" -- "*" Item : contains >
+User "1" -- "*" Category : manages >
+Inventory "1" -- "*" Category : contains >
+System "1" -- "*" Error : handles >
+System "1" -- "*" User : manages >
+@enduml
