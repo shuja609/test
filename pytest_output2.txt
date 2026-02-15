@@ -1,0 +1,686 @@
+﻿FFFFF...FFFFFFFFFFFFFFFFFFFFF.FFFFFFFFFFFFFFFFF........FF.FFFF..F...F.F. [ 58%]
+.FFFFFFFFFFFF.F..F.F..........F...F.....FFFFFFFFFFFF                     [100%]
+================================== FAILURES ===================================
+E   assert 404 == 201
+     +  where 404 = <Response [404 Not Found]>.status_code
+---------------------------- Captured stderr call -----------------------------
+INFO:httpx:HTTP Request: POST http://testserver/categories/ "HTTP/1.1 404 Not Found"
+------------------------------ Captured log call ------------------------------
+INFO     httpx:_client.py:1025 HTTP Request: POST http://testserver/categories/ "HTTP/1.1 404 Not Found"
+E:\Uni data\FYP\integrow\projects\shuja609\test\tests\api\test_category_router.py:13: assert 404 == 201
+E   KeyError: 'id'
+---------------------------- Captured stderr call -----------------------------
+INFO:httpx:HTTP Request: POST http://testserver/categories/ "HTTP/1.1 404 Not Found"
+------------------------------ Captured log call ------------------------------
+INFO     httpx:_client.py:1025 HTTP Request: POST http://testserver/categories/ "HTTP/1.1 404 Not Found"
+E:\Uni data\FYP\integrow\projects\shuja609\test\tests\api\test_category_router.py:21: KeyError: 'id'
+E   assert 404 == 200
+     +  where 404 = <Response [404 Not Found]>.status_code
+---------------------------- Captured stderr call -----------------------------
+INFO:httpx:HTTP Request: POST http://testserver/categories/ "HTTP/1.1 404 Not Found"
+INFO:httpx:HTTP Request: POST http://testserver/categories/ "HTTP/1.1 404 Not Found"
+INFO:httpx:HTTP Request: GET http://testserver/categories/ "HTTP/1.1 404 Not Found"
+------------------------------ Captured log call ------------------------------
+INFO     httpx:_client.py:1025 HTTP Request: POST http://testserver/categories/ "HTTP/1.1 404 Not Found"
+INFO     httpx:_client.py:1025 HTTP Request: POST http://testserver/categories/ "HTTP/1.1 404 Not Found"
+INFO     httpx:_client.py:1025 HTTP Request: GET http://testserver/categories/ "HTTP/1.1 404 Not Found"
+E:\Uni data\FYP\integrow\projects\shuja609\test\tests\api\test_category_router.py:32: assert 404 == 200
+E   KeyError: 'id'
+---------------------------- Captured stderr call -----------------------------
+INFO:httpx:HTTP Request: POST http://testserver/categories/ "HTTP/1.1 404 Not Found"
+------------------------------ Captured log call ------------------------------
+INFO     httpx:_client.py:1025 HTTP Request: POST http://testserver/categories/ "HTTP/1.1 404 Not Found"
+E:\Uni data\FYP\integrow\projects\shuja609\test\tests\api\test_category_router.py:38: KeyError: 'id'
+E   KeyError: 'id'
+---------------------------- Captured stderr call -----------------------------
+INFO:httpx:HTTP Request: POST http://testserver/categories/ "HTTP/1.1 404 Not Found"
+------------------------------ Captured log call ------------------------------
+INFO     httpx:_client.py:1025 HTTP Request: POST http://testserver/categories/ "HTTP/1.1 404 Not Found"
+E:\Uni data\FYP\integrow\projects\shuja609\test\tests\api\test_category_router.py:50: KeyError: 'id'
+E   assert 404 == 422
+     +  where 404 = <Response [404 Not Found]>.status_code
+---------------------------- Captured stderr call -----------------------------
+INFO:httpx:HTTP Request: POST http://testserver/categories/ "HTTP/1.1 404 Not Found"
+------------------------------ Captured log call ------------------------------
+INFO     httpx:_client.py:1025 HTTP Request: POST http://testserver/categories/ "HTTP/1.1 404 Not Found"
+E:\Uni data\FYP\integrow\projects\shuja609\test\tests\api\test_category_router.py:77: assert 404 == 422
+E   assert 404 == 422
+     +  where 404 = <Response [404 Not Found]>.status_code
+---------------------------- Captured stderr call -----------------------------
+INFO:httpx:HTTP Request: POST http://testserver/categories/ "HTTP/1.1 404 Not Found"
+------------------------------ Captured log call ------------------------------
+INFO     httpx:_client.py:1025 HTTP Request: POST http://testserver/categories/ "HTTP/1.1 404 Not Found"
+E:\Uni data\FYP\integrow\projects\shuja609\test\tests\api\test_category_router.py:82: assert 404 == 422
+E   KeyError: 'id'
+---------------------------- Captured stderr call -----------------------------
+INFO:httpx:HTTP Request: POST http://testserver/categories/ "HTTP/1.1 404 Not Found"
+------------------------------ Captured log call ------------------------------
+INFO     httpx:_client.py:1025 HTTP Request: POST http://testserver/categories/ "HTTP/1.1 404 Not Found"
+E:\Uni data\FYP\integrow\projects\shuja609\test\tests\api\test_category_router.py:87: KeyError: 'id'
+E   AttributeError: 'generator' object has no attribute 'add'
+E:\Uni data\FYP\integrow\projects\shuja609\test\tests\models\test_category.py:15: AttributeError: 'generator' object has no attribute 'add'
+E   AttributeError: 'generator' object has no attribute 'add'
+E:\Uni data\FYP\integrow\projects\shuja609\test\tests\models\test_category.py:24: AttributeError: 'generator' object has no attribute 'add'
+E   AttributeError: 'generator' object has no attribute 'add'
+E:\Uni data\FYP\integrow\projects\shuja609\test\tests\models\test_category.py:36: AttributeError: 'generator' object has no attribute 'add'
+E   AttributeError: 'generator' object has no attribute 'add'
+E:\Uni data\FYP\integrow\projects\shuja609\test\tests\models\test_category.py:47: AttributeError: 'generator' object has no attribute 'add'
+E   AttributeError: get_categories
+E:\Uni data\FYP\integrow\projects\shuja609\test\.venv\Lib\site-packages\pydantic\_internal\_model_construction.py:289: AttributeError: get_categories
+E   AttributeError: create_category
+E:\Uni data\FYP\integrow\projects\shuja609\test\.venv\Lib\site-packages\pydantic\_internal\_model_construction.py:289: AttributeError: create_category
+E   AttributeError: 'generator' object has no attribute 'add'
+E:\Uni data\FYP\integrow\projects\shuja609\test\tests\models\test_category.py:70: AttributeError: 'generator' object has no attribute 'add'
+E   AttributeError: 'generator' object has no attribute 'add'
+E:\Uni data\FYP\integrow\projects\shuja609\test\tests\models\test_category.py:82: AttributeError: 'generator' object has no attribute 'add'
+E   Failed: DID NOT RAISE <class 'Exception'>
+E:\Uni data\FYP\integrow\projects\shuja609\test\tests\models\test_category.py:88: Failed: DID NOT RAISE <class 'Exception'>
+E   Failed: DID NOT RAISE <class 'Exception'>
+E:\Uni data\FYP\integrow\projects\shuja609\test\tests\models\test_category.py:94: Failed: DID NOT RAISE <class 'Exception'>
+E   AttributeError: 'generator' object has no attribute 'add'
+E:\Uni data\FYP\integrow\projects\shuja609\test\tests\models\test_error.py:14: AttributeError: 'generator' object has no attribute 'add'
+E   TypeError: 'generator' object does not support the context manager protocol
+
+During handling of the above exception, another exception occurred:
+E   fastapi.exceptions.HTTPException: 500: Internal Server Error
+---------------------------- Captured stderr call -----------------------------
+ERROR:root:Error creating error instance: 'generator' object does not support the context manager protocol
+------------------------------ Captured log call ------------------------------
+ERROR    root:error.py:43 Error creating error instance: 'generator' object does not support the context manager protocol
+E:\Uni data\FYP\integrow\projects\shuja609\test\app\models\error.py:44: fastapi.exceptions.HTTPException: 500: Internal Server Error
+E   TypeError: 'generator' object does not support the context manager protocol
+
+During handling of the above exception, another exception occurred:
+E   fastapi.exceptions.HTTPException: 500: Internal Server Error
+---------------------------- Captured stderr call -----------------------------
+ERROR:root:Error creating error instance: 'generator' object does not support the context manager protocol
+------------------------------ Captured log call ------------------------------
+ERROR    root:error.py:43 Error creating error instance: 'generator' object does not support the context manager protocol
+E:\Uni data\FYP\integrow\projects\shuja609\test\app\models\error.py:44: fastapi.exceptions.HTTPException: 500: Internal Server Error
+E   NameError: name 'ErrorModel' is not defined
+
+During handling of the above exception, another exception occurred:
+E   NameError: name 'ValidationError' is not defined
+E:\Uni data\FYP\integrow\projects\shuja609\test\tests\models\test_error.py:38: NameError: name 'ValidationError' is not defined
+E   TypeError: 'generator' object does not support the context manager protocol
+
+During handling of the above exception, another exception occurred:
+E   fastapi.exceptions.HTTPException: 500: Internal Server Error
+---------------------------- Captured stderr call -----------------------------
+ERROR:root:Error retrieving error instance: 'generator' object does not support the context manager protocol
+------------------------------ Captured log call ------------------------------
+ERROR    root:error.py:60 Error retrieving error instance: 'generator' object does not support the context manager protocol
+E:\Uni data\FYP\integrow\projects\shuja609\test\app\models\error.py:61: fastapi.exceptions.HTTPException: 500: Internal Server Error
+E   TypeError: 'generator' object does not support the context manager protocol
+
+During handling of the above exception, another exception occurred:
+E   fastapi.exceptions.HTTPException: 500: Internal Server Error
+---------------------------- Captured stderr call -----------------------------
+ERROR:root:Error creating error instance: 'generator' object does not support the context manager protocol
+------------------------------ Captured log call ------------------------------
+ERROR    root:error.py:43 Error creating error instance: 'generator' object does not support the context manager protocol
+E:\Uni data\FYP\integrow\projects\shuja609\test\app\models\error.py:44: fastapi.exceptions.HTTPException: 500: Internal Server Error
+E   Failed: DID NOT RAISE <class 'ValueError'>
+E:\Uni data\FYP\integrow\projects\shuja609\test\tests\models\test_error.py:57: Failed: DID NOT RAISE <class 'ValueError'>
+E   TypeError: 'generator' object does not support the context manager protocol
+
+During handling of the above exception, another exception occurred:
+E   fastapi.exceptions.HTTPException: 500: Internal Server Error
+---------------------------- Captured stderr call -----------------------------
+ERROR:root:Error creating error instance: 'generator' object does not support the context manager protocol
+------------------------------ Captured log call ------------------------------
+ERROR    root:error.py:43 Error creating error instance: 'generator' object does not support the context manager protocol
+E:\Uni data\FYP\integrow\projects\shuja609\test\app\models\error.py:44: fastapi.exceptions.HTTPException: 500: Internal Server Error
+E   AttributeError: 'generator' object has no attribute 'add'
+E:\Uni data\FYP\integrow\projects\shuja609\test\tests\models\test_error.py:77: AttributeError: 'generator' object has no attribute 'add'
+E   sqlite3.IntegrityError: NOT NULL constraint failed: inventory.name
+
+The above exception was the direct cause of the following exception:
+E   sqlalchemy.exc.IntegrityError: (sqlite3.IntegrityError) NOT NULL constraint failed: inventory.name
+    [SQL: INSERT INTO inventory (id, name, category, description, quantity) VALUES (?, ?, ?, ?, ?)]
+    [parameters: ('06f3b186a6ff4a899569a9445ce29157', None, None, None, 0)]
+    (Background on this error at: https://sqlalche.me/e/20/gkpj)
+E:\Uni data\FYP\integrow\projects\shuja609\test\.venv\Lib\site-packages\sqlalchemy\engine\default.py:952: sqlalchemy.exc.IntegrityError: (sqlite3.IntegrityError) NOT NULL constraint failed: inventory.name
+E   sqlite3.IntegrityError: NOT NULL constraint failed: inventory.name
+
+The above exception was the direct cause of the following exception:
+E   sqlalchemy.exc.IntegrityError: (sqlite3.IntegrityError) NOT NULL constraint failed: inventory.name
+    [SQL: INSERT INTO inventory (id, name, category, description, quantity) VALUES (?, ?, ?, ?, ?)]
+    [parameters: ('359d669264e14d6c811aa0d0a76aa020', None, None, None, 0)]
+    (Background on this error at: https://sqlalche.me/e/20/gkpj)
+E:\Uni data\FYP\integrow\projects\shuja609\test\.venv\Lib\site-packages\sqlalchemy\engine\default.py:952: sqlalchemy.exc.IntegrityError: (sqlite3.IntegrityError) NOT NULL constraint failed: inventory.name
+E   sqlite3.IntegrityError: NOT NULL constraint failed: inventory.name
+
+The above exception was the direct cause of the following exception:
+E   sqlalchemy.exc.IntegrityError: (sqlite3.IntegrityError) NOT NULL constraint failed: inventory.name
+    [SQL: INSERT INTO inventory (id, name, category, description, quantity) VALUES (?, ?, ?, ?, ?)]
+    [parameters: ('f85147e49dfe4421801d50296684c80b', None, None, None, 0)]
+    (Background on this error at: https://sqlalche.me/e/20/gkpj)
+E:\Uni data\FYP\integrow\projects\shuja609\test\.venv\Lib\site-packages\sqlalchemy\engine\default.py:952: sqlalchemy.exc.IntegrityError: (sqlite3.IntegrityError) NOT NULL constraint failed: inventory.name
+E   sqlite3.IntegrityError: NOT NULL constraint failed: inventory.name
+
+The above exception was the direct cause of the following exception:
+E   sqlalchemy.exc.IntegrityError: (sqlite3.IntegrityError) NOT NULL constraint failed: inventory.name
+    [SQL: INSERT INTO inventory (id, name, category, description, quantity) VALUES (?, ?, ?, ?, ?)]
+    [parameters: ('59f99a612dee4e2f92b5bd77c415ed21', None, None, None, 0)]
+    (Background on this error at: https://sqlalche.me/e/20/gkpj)
+E:\Uni data\FYP\integrow\projects\shuja609\test\.venv\Lib\site-packages\sqlalchemy\engine\default.py:952: sqlalchemy.exc.IntegrityError: (sqlite3.IntegrityError) NOT NULL constraint failed: inventory.name
+E   sqlite3.IntegrityError: NOT NULL constraint failed: inventory.name
+
+The above exception was the direct cause of the following exception:
+E   sqlalchemy.exc.IntegrityError: (sqlite3.IntegrityError) NOT NULL constraint failed: inventory.name
+    [SQL: INSERT INTO inventory (id, name, category, description, quantity) VALUES (?, ?, ?, ?, ?)]
+    [parameters: ('b796d98a230c4344874179f09fda362a', None, None, None, 0)]
+    (Background on this error at: https://sqlalche.me/e/20/gkpj)
+E:\Uni data\FYP\integrow\projects\shuja609\test\.venv\Lib\site-packages\sqlalchemy\engine\default.py:952: sqlalchemy.exc.IntegrityError: (sqlite3.IntegrityError) NOT NULL constraint failed: inventory.name
+E   sqlite3.IntegrityError: NOT NULL constraint failed: inventory.name
+
+The above exception was the direct cause of the following exception:
+E   sqlalchemy.exc.IntegrityError: (sqlite3.IntegrityError) NOT NULL constraint failed: inventory.name
+    [SQL: INSERT INTO inventory (id, name, category, description, quantity) VALUES (?, ?, ?, ?, ?)]
+    [parameters: ('855747c9e39e4a2d8fa0677cc7238e40', None, None, None, 0)]
+    (Background on this error at: https://sqlalche.me/e/20/gkpj)
+E:\Uni data\FYP\integrow\projects\shuja609\test\.venv\Lib\site-packages\sqlalchemy\engine\default.py:952: sqlalchemy.exc.IntegrityError: (sqlite3.IntegrityError) NOT NULL constraint failed: inventory.name
+E   sqlite3.IntegrityError: NOT NULL constraint failed: inventory.name
+
+The above exception was the direct cause of the following exception:
+E   sqlalchemy.exc.IntegrityError: (sqlite3.IntegrityError) NOT NULL constraint failed: inventory.name
+    [SQL: INSERT INTO inventory (id, name, category, description, quantity) VALUES (?, ?, ?, ?, ?)]
+    [parameters: ('18f5c27bb0d04f33a17c905ad912db5a', None, None, None, 0)]
+    (Background on this error at: https://sqlalche.me/e/20/gkpj)
+E:\Uni data\FYP\integrow\projects\shuja609\test\.venv\Lib\site-packages\sqlalchemy\engine\default.py:952: sqlalchemy.exc.IntegrityError: (sqlite3.IntegrityError) NOT NULL constraint failed: inventory.name
+E   sqlite3.IntegrityError: NOT NULL constraint failed: inventory.name
+
+The above exception was the direct cause of the following exception:
+E   sqlalchemy.exc.IntegrityError: (sqlite3.IntegrityError) NOT NULL constraint failed: inventory.name
+    [SQL: INSERT INTO inventory (id, name, category, description, quantity) VALUES (?, ?, ?, ?, ?)]
+    [parameters: ('a998e91032db4fb682d6e97b624e8ab3', None, None, None, 0)]
+    (Background on this error at: https://sqlalche.me/e/20/gkpj)
+E:\Uni data\FYP\integrow\projects\shuja609\test\.venv\Lib\site-packages\sqlalchemy\engine\default.py:952: sqlalchemy.exc.IntegrityError: (sqlite3.IntegrityError) NOT NULL constraint failed: inventory.name
+E   sqlite3.IntegrityError: NOT NULL constraint failed: inventory.name
+
+The above exception was the direct cause of the following exception:
+E   sqlalchemy.exc.IntegrityError: (sqlite3.IntegrityError) NOT NULL constraint failed: inventory.name
+    [SQL: INSERT INTO inventory (id, name, category, description, quantity) VALUES (?, ?, ?, ?, ?)]
+    [parameters: ('47ea4301191243748d95cc3ad30681dd', None, None, None, 0)]
+    (Background on this error at: https://sqlalche.me/e/20/gkpj)
+E:\Uni data\FYP\integrow\projects\shuja609\test\.venv\Lib\site-packages\sqlalchemy\engine\default.py:952: sqlalchemy.exc.IntegrityError: (sqlite3.IntegrityError) NOT NULL constraint failed: inventory.name
+E   TypeError: __init__() takes 1 positional argument but 5 were given
+E:\Uni data\FYP\integrow\projects\shuja609\test\tests\models\test_item.py:13: TypeError: __init__() takes 1 positional argument but 5 were given
+E   TypeError: __init__() takes 1 positional argument but 5 were given
+E:\Uni data\FYP\integrow\projects\shuja609\test\tests\models\test_item.py:18: TypeError: __init__() takes 1 positional argument but 5 were given
+E   TypeError: __init__() takes 1 positional argument but 5 were given
+E:\Uni data\FYP\integrow\projects\shuja609\test\tests\models\test_item.py:33: TypeError: __init__() takes 1 positional argument but 5 were given
+E   TypeError: __init__() takes 1 positional argument but 5 were given
+E:\Uni data\FYP\integrow\projects\shuja609\test\tests\models\test_item.py:40: TypeError: __init__() takes 1 positional argument but 5 were given
+E   TypeError: __init__() takes 1 positional argument but 5 were given
+E:\Uni data\FYP\integrow\projects\shuja609\test\tests\models\test_item.py:46: TypeError: __init__() takes 1 positional argument but 5 were given
+E   TypeError: __init__() takes 1 positional argument but 5 were given
+E:\Uni data\FYP\integrow\projects\shuja609\test\tests\models\test_item.py:61: TypeError: __init__() takes 1 positional argument but 5 were given
+E   TypeError: __init__() takes 1 positional argument but 5 were given
+E:\Uni data\FYP\integrow\projects\shuja609\test\tests\models\test_item.py:69: TypeError: __init__() takes 1 positional argument but 5 were given
+E   NameError: name 'EmailError' is not defined
+E:\Uni data\FYP\integrow\projects\shuja609\test\tests\models\test_user.py:11: NameError: name 'EmailError' is not defined
+E   sqlite3.IntegrityError: datatype mismatch
+
+The above exception was the direct cause of the following exception:
+E   sqlalchemy.exc.IntegrityError: (sqlite3.IntegrityError) datatype mismatch
+    [SQL: INSERT INTO user (id, username, email, password, inventory) VALUES (?, ?, ?, ?, ?)]
+    [parameters: ('9e5dfe4b-4ee4-4d03-bf28-e83fc3ff2152', 'test', 'test@example.com', 'test', 'test')]
+    (Background on this error at: https://sqlalche.me/e/20/gkpj)
+E:\Uni data\FYP\integrow\projects\shuja609\test\.venv\Lib\site-packages\sqlalchemy\engine\default.py:952: sqlalchemy.exc.IntegrityError: (sqlite3.IntegrityError) datatype mismatch
+E   NameError: name 'UserService' is not defined
+E:\Uni data\FYP\integrow\projects\shuja609\test\tests\models\test_user.py:48: NameError: name 'UserService' is not defined
+E   sqlite3.IntegrityError: datatype mismatch
+
+The above exception was the direct cause of the following exception:
+E   sqlalchemy.exc.IntegrityError: (sqlite3.IntegrityError) datatype mismatch
+    [SQL: INSERT INTO user (id, username, email, password, inventory) VALUES (?, ?, ?, ?, ?)]
+    [parameters: ('a6ccb87b-c5cd-45dd-88ef-be81305e9fbb', 'test', 'test@example.com', 'test', 'test')]
+    (Background on this error at: https://sqlalche.me/e/20/gkpj)
+E:\Uni data\FYP\integrow\projects\shuja609\test\.venv\Lib\site-packages\sqlalchemy\engine\default.py:952: sqlalchemy.exc.IntegrityError: (sqlite3.IntegrityError) datatype mismatch
+E   sqlite3.IntegrityError: datatype mismatch
+
+The above exception was the direct cause of the following exception:
+E   sqlalchemy.exc.IntegrityError: (sqlite3.IntegrityError) datatype mismatch
+    [SQL: INSERT INTO user (id, username, email, password, inventory) VALUES (?, ?, ?, ?, ?)]
+    [parameters: ('bcb758bf-0685-4b77-bf3c-d8e3b7c93a83', 'test', 'test@example.com', 'test', 'test')]
+    (Background on this error at: https://sqlalche.me/e/20/gkpj)
+E:\Uni data\FYP\integrow\projects\shuja609\test\.venv\Lib\site-packages\sqlalchemy\engine\default.py:952: sqlalchemy.exc.IntegrityError: (sqlite3.IntegrityError) datatype mismatch
+E   sqlite3.IntegrityError: datatype mismatch
+
+The above exception was the direct cause of the following exception:
+E   sqlalchemy.exc.IntegrityError: (sqlite3.IntegrityError) datatype mismatch
+    [SQL: INSERT INTO user (id, username, email, password, inventory) VALUES (?, ?, ?, ?, ?)]
+    [parameters: ('461652db-7770-41d6-90e4-88c18ce5425f', 'test', 'test@example.com', 'test', 'test')]
+    (Background on this error at: https://sqlalche.me/e/20/gkpj)
+E:\Uni data\FYP\integrow\projects\shuja609\test\.venv\Lib\site-packages\sqlalchemy\engine\default.py:952: sqlalchemy.exc.IntegrityError: (sqlite3.IntegrityError) datatype mismatch
+E   AttributeError: 'str' object has no attribute 'hex'
+
+The above exception was the direct cause of the following exception:
+E   sqlalchemy.exc.StatementError: (builtins.AttributeError) 'str' object has no attribute 'hex'
+    [SQL: SELECT category.id AS category_id, category.name AS category_name, category.description AS category_description, category.parent_id AS category_parent_id 
+    FROM category 
+    WHERE category.id = ?]
+    [parameters: [{'pk_1': '123e4567-e89b-12d3-a456-426655440000'}]]
+---------------------------- Captured stderr call -----------------------------
+ERROR:root:Failed to retrieve category: (builtins.AttributeError) 'str' object has no attribute 'hex'
+[SQL: SELECT category.id AS category_id, category.name AS category_name, category.description AS category_description, category.parent_id AS category_parent_id 
+FROM category 
+WHERE category.id = ?]
+[parameters: [{'pk_1': '123e4567-e89b-12d3-a456-426655440000'}]]
+------------------------------ Captured log call ------------------------------
+ERROR    root:category_service.py:26 Failed to retrieve category: (builtins.AttributeError) 'str' object has no attribute 'hex'
+[SQL: SELECT category.id AS category_id, category.name AS category_name, category.description AS category_description, category.parent_id AS category_parent_id 
+FROM category 
+WHERE category.id = ?]
+[parameters: [{'pk_1': '123e4567-e89b-12d3-a456-426655440000'}]]
+E:\Uni data\FYP\integrow\projects\shuja609\test\.venv\Lib\site-packages\sqlalchemy\sql\sqltypes.py:3734: sqlalchemy.exc.StatementError: (builtins.AttributeError) 'str' object has no attribute 'hex'
+E   AttributeError: 'str' object has no attribute 'hex'
+
+The above exception was the direct cause of the following exception:
+E   sqlalchemy.exc.StatementError: (builtins.AttributeError) 'str' object has no attribute 'hex'
+    [SQL: SELECT category.id AS category_id, category.name AS category_name, category.description AS category_description, category.parent_id AS category_parent_id 
+    FROM category 
+    WHERE category.id = ?]
+    [parameters: [{'pk_1': '123e4567-e89b-12d3-a456-426655440000'}]]
+---------------------------- Captured stderr call -----------------------------
+ERROR:root:Failed to retrieve category: (builtins.AttributeError) 'str' object has no attribute 'hex'
+[SQL: SELECT category.id AS category_id, category.name AS category_name, category.description AS category_description, category.parent_id AS category_parent_id 
+FROM category 
+WHERE category.id = ?]
+[parameters: [{'pk_1': '123e4567-e89b-12d3-a456-426655440000'}]]
+ERROR:root:Failed to update category: (builtins.AttributeError) 'str' object has no attribute 'hex'
+[SQL: SELECT category.id AS category_id, category.name AS category_name, category.description AS category_description, category.parent_id AS category_parent_id 
+FROM category 
+WHERE category.id = ?]
+[parameters: [{'pk_1': '123e4567-e89b-12d3-a456-426655440000'}]]
+------------------------------ Captured log call ------------------------------
+ERROR    root:category_service.py:26 Failed to retrieve category: (builtins.AttributeError) 'str' object has no attribute 'hex'
+[SQL: SELECT category.id AS category_id, category.name AS category_name, category.description AS category_description, category.parent_id AS category_parent_id 
+FROM category 
+WHERE category.id = ?]
+[parameters: [{'pk_1': '123e4567-e89b-12d3-a456-426655440000'}]]
+ERROR    root:category_service.py:52 Failed to update category: (builtins.AttributeError) 'str' object has no attribute 'hex'
+[SQL: SELECT category.id AS category_id, category.name AS category_name, category.description AS category_description, category.parent_id AS category_parent_id 
+FROM category 
+WHERE category.id = ?]
+[parameters: [{'pk_1': '123e4567-e89b-12d3-a456-426655440000'}]]
+E:\Uni data\FYP\integrow\projects\shuja609\test\.venv\Lib\site-packages\sqlalchemy\sql\sqltypes.py:3734: sqlalchemy.exc.StatementError: (builtins.AttributeError) 'str' object has no attribute 'hex'
+E   AttributeError: 'str' object has no attribute 'hex'
+
+The above exception was the direct cause of the following exception:
+E   sqlalchemy.exc.StatementError: (builtins.AttributeError) 'str' object has no attribute 'hex'
+    [SQL: SELECT category.id AS category_id, category.name AS category_name, category.description AS category_description, category.parent_id AS category_parent_id 
+    FROM category 
+    WHERE category.id = ?]
+    [parameters: [{'pk_1': '123e4567-e89b-12d3-a456-426655440000'}]]
+---------------------------- Captured stderr call -----------------------------
+ERROR:root:Failed to retrieve category: (builtins.AttributeError) 'str' object has no attribute 'hex'
+[SQL: SELECT category.id AS category_id, category.name AS category_name, category.description AS category_description, category.parent_id AS category_parent_id 
+FROM category 
+WHERE category.id = ?]
+[parameters: [{'pk_1': '123e4567-e89b-12d3-a456-426655440000'}]]
+ERROR:root:Failed to delete category: (builtins.AttributeError) 'str' object has no attribute 'hex'
+[SQL: SELECT category.id AS category_id, category.name AS category_name, category.description AS category_description, category.parent_id AS category_parent_id 
+FROM category 
+WHERE category.id = ?]
+[parameters: [{'pk_1': '123e4567-e89b-12d3-a456-426655440000'}]]
+------------------------------ Captured log call ------------------------------
+ERROR    root:category_service.py:26 Failed to retrieve category: (builtins.AttributeError) 'str' object has no attribute 'hex'
+[SQL: SELECT category.id AS category_id, category.name AS category_name, category.description AS category_description, category.parent_id AS category_parent_id 
+FROM category 
+WHERE category.id = ?]
+[parameters: [{'pk_1': '123e4567-e89b-12d3-a456-426655440000'}]]
+ERROR    root:category_service.py:66 Failed to delete category: (builtins.AttributeError) 'str' object has no attribute 'hex'
+[SQL: SELECT category.id AS category_id, category.name AS category_name, category.description AS category_description, category.parent_id AS category_parent_id 
+FROM category 
+WHERE category.id = ?]
+[parameters: [{'pk_1': '123e4567-e89b-12d3-a456-426655440000'}]]
+E:\Uni data\FYP\integrow\projects\shuja609\test\.venv\Lib\site-packages\sqlalchemy\sql\sqltypes.py:3734: sqlalchemy.exc.StatementError: (builtins.AttributeError) 'str' object has no attribute 'hex'
+E   sqlite3.IntegrityError: NOT NULL constraint failed: error.message
+
+The above exception was the direct cause of the following exception:
+E   sqlalchemy.exc.IntegrityError: (sqlite3.IntegrityError) NOT NULL constraint failed: error.message
+    [SQL: INSERT INTO error (message, code) VALUES (?, ?)]
+    [parameters: (None, None)]
+    (Background on this error at: https://sqlalche.me/e/20/gkpj)
+
+During handling of the above exception, another exception occurred:
+E   fastapi.exceptions.HTTPException: 500: Error creating item
+---------------------------- Captured stderr call -----------------------------
+ERROR:root:Error creating item: (sqlite3.IntegrityError) NOT NULL constraint failed: error.message
+[SQL: INSERT INTO error (message, code) VALUES (?, ?)]
+[parameters: (None, None)]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+------------------------------ Captured log call ------------------------------
+ERROR    root:error_service.py:25 Error creating item: (sqlite3.IntegrityError) NOT NULL constraint failed: error.message
+[SQL: INSERT INTO error (message, code) VALUES (?, ?)]
+[parameters: (None, None)]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+E:\Uni data\FYP\integrow\projects\shuja609\test\app\services\error_service.py:26: fastapi.exceptions.HTTPException: 500: Error creating item
+E   NameError: name 'HTTPException' is not defined
+E:\Uni data\FYP\integrow\projects\shuja609\test\tests\services\test_error_service.py:22: NameError: name 'HTTPException' is not defined
+E   NameError: name 'HTTPException' is not defined
+E:\Uni data\FYP\integrow\projects\shuja609\test\tests\services\test_error_service.py:29: NameError: name 'HTTPException' is not defined
+E   NameError: name 'HTTPException' is not defined
+E:\Uni data\FYP\integrow\projects\shuja609\test\tests\services\test_error_service.py:35: NameError: name 'HTTPException' is not defined
+E   sqlite3.IntegrityError: NOT NULL constraint failed: error.message
+
+The above exception was the direct cause of the following exception:
+E   sqlalchemy.exc.IntegrityError: (sqlite3.IntegrityError) NOT NULL constraint failed: error.message
+    [SQL: INSERT INTO error (message, code) VALUES (?, ?)]
+    [parameters: (None, None)]
+    (Background on this error at: https://sqlalche.me/e/20/gkpj)
+
+During handling of the above exception, another exception occurred:
+E   fastapi.exceptions.HTTPException: 500: Error creating item
+---------------------------- Captured stderr call -----------------------------
+ERROR:root:Error creating item: (sqlite3.IntegrityError) NOT NULL constraint failed: error.message
+[SQL: INSERT INTO error (message, code) VALUES (?, ?)]
+[parameters: (None, None)]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+------------------------------ Captured log call ------------------------------
+ERROR    root:error_service.py:25 Error creating item: (sqlite3.IntegrityError) NOT NULL constraint failed: error.message
+[SQL: INSERT INTO error (message, code) VALUES (?, ?)]
+[parameters: (None, None)]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+E:\Uni data\FYP\integrow\projects\shuja609\test\app\services\error_service.py:26: fastapi.exceptions.HTTPException: 500: Error creating item
+E   NameError: name 'HTTPException' is not defined
+E:\Uni data\FYP\integrow\projects\shuja609\test\tests\services\test_error_service.py:57: NameError: name 'HTTPException' is not defined
+E   sqlite3.IntegrityError: NOT NULL constraint failed: error.message
+
+The above exception was the direct cause of the following exception:
+E   sqlalchemy.exc.IntegrityError: (sqlite3.IntegrityError) NOT NULL constraint failed: error.message
+    [SQL: INSERT INTO error (message, code) VALUES (?, ?)]
+    [parameters: (None, None)]
+    (Background on this error at: https://sqlalche.me/e/20/gkpj)
+
+During handling of the above exception, another exception occurred:
+E   fastapi.exceptions.HTTPException: 500: Error creating item
+---------------------------- Captured stderr call -----------------------------
+ERROR:root:Error creating item: (sqlite3.IntegrityError) NOT NULL constraint failed: error.message
+[SQL: INSERT INTO error (message, code) VALUES (?, ?)]
+[parameters: (None, None)]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+------------------------------ Captured log call ------------------------------
+ERROR    root:error_service.py:25 Error creating item: (sqlite3.IntegrityError) NOT NULL constraint failed: error.message
+[SQL: INSERT INTO error (message, code) VALUES (?, ?)]
+[parameters: (None, None)]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+E:\Uni data\FYP\integrow\projects\shuja609\test\app\services\error_service.py:26: fastapi.exceptions.HTTPException: 500: Error creating item
+E   TypeError: BaseModel.validate() missing 1 required positional argument: 'value'
+E:\Uni data\FYP\integrow\projects\shuja609\test\app\services\error_service.py:75: TypeError: BaseModel.validate() missing 1 required positional argument: 'value'
+E   NameError: name 'HTTPException' is not defined
+E:\Uni data\FYP\integrow\projects\shuja609\test\tests\services\test_error_service.py:85: NameError: name 'HTTPException' is not defined
+E   sqlite3.IntegrityError: NOT NULL constraint failed: error.message
+
+The above exception was the direct cause of the following exception:
+E   sqlalchemy.exc.IntegrityError: (sqlite3.IntegrityError) NOT NULL constraint failed: error.message
+    [SQL: INSERT INTO error (message, code) VALUES (?, ?)]
+    [parameters: (None, None)]
+    (Background on this error at: https://sqlalche.me/e/20/gkpj)
+
+During handling of the above exception, another exception occurred:
+E   fastapi.exceptions.HTTPException: 500: Error creating item
+---------------------------- Captured stderr call -----------------------------
+ERROR:root:Error creating item: (sqlite3.IntegrityError) NOT NULL constraint failed: error.message
+[SQL: INSERT INTO error (message, code) VALUES (?, ?)]
+[parameters: (None, None)]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+------------------------------ Captured log call ------------------------------
+ERROR    root:error_service.py:25 Error creating item: (sqlite3.IntegrityError) NOT NULL constraint failed: error.message
+[SQL: INSERT INTO error (message, code) VALUES (?, ?)]
+[parameters: (None, None)]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+E:\Uni data\FYP\integrow\projects\shuja609\test\app\services\error_service.py:26: fastapi.exceptions.HTTPException: 500: Error creating item
+E   sqlite3.IntegrityError: NOT NULL constraint failed: error.message
+
+The above exception was the direct cause of the following exception:
+E   sqlalchemy.exc.IntegrityError: (sqlite3.IntegrityError) NOT NULL constraint failed: error.message
+    [SQL: INSERT INTO error (message, code) VALUES (?, ?)]
+    [parameters: (None, None)]
+    (Background on this error at: https://sqlalche.me/e/20/gkpj)
+
+During handling of the above exception, another exception occurred:
+E   fastapi.exceptions.HTTPException: 500: Error creating item
+---------------------------- Captured stderr call -----------------------------
+ERROR:root:Error creating item: (sqlite3.IntegrityError) NOT NULL constraint failed: error.message
+[SQL: INSERT INTO error (message, code) VALUES (?, ?)]
+[parameters: (None, None)]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+------------------------------ Captured log call ------------------------------
+ERROR    root:error_service.py:25 Error creating item: (sqlite3.IntegrityError) NOT NULL constraint failed: error.message
+[SQL: INSERT INTO error (message, code) VALUES (?, ?)]
+[parameters: (None, None)]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+E:\Uni data\FYP\integrow\projects\shuja609\test\app\services\error_service.py:26: fastapi.exceptions.HTTPException: 500: Error creating item
+E   NameError: name 'HTTPException' is not defined
+E:\Uni data\FYP\integrow\projects\shuja609\test\tests\services\test_error_service.py:113: NameError: name 'HTTPException' is not defined
+E   sqlalchemy.exc.InvalidRequestError: Could not refresh instance '<Inventory at 0x1539200def0>'
+E:\Uni data\FYP\integrow\projects\shuja609\test\.venv\Lib\site-packages\sqlalchemy\orm\session.py:3170: sqlalchemy.exc.InvalidRequestError: Could not refresh instance '<Inventory at 0x1539200def0>'
+E   sqlalchemy.exc.InvalidRequestError: Could not refresh instance '<Inventory at 0x1539200def0>'
+E:\Uni data\FYP\integrow\projects\shuja609\test\.venv\Lib\site-packages\sqlalchemy\orm\session.py:3170: sqlalchemy.exc.InvalidRequestError: Could not refresh instance '<Inventory at 0x1539200def0>'
+E   sqlalchemy.exc.InvalidRequestError: Could not refresh instance '<Inventory at 0x1539200def0>'
+E:\Uni data\FYP\integrow\projects\shuja609\test\.venv\Lib\site-packages\sqlalchemy\orm\session.py:3170: sqlalchemy.exc.InvalidRequestError: Could not refresh instance '<Inventory at 0x1539200def0>'
+E   Failed: DID NOT RAISE <class 'app.exceptions.ItemNotFoundError'>
+E:\Uni data\FYP\integrow\projects\shuja609\test\tests\services\test_item_service.py:49: Failed: DID NOT RAISE <class 'app.exceptions.ItemNotFoundError'>
+E   Failed: DID NOT RAISE <class 'app.exceptions.ItemNotFoundError'>
+E:\Uni data\FYP\integrow\projects\shuja609\test\tests\services\test_item_service.py:88: Failed: DID NOT RAISE <class 'app.exceptions.ItemNotFoundError'>
+E   sqlite3.IntegrityError: NOT NULL constraint failed: system.version
+
+The above exception was the direct cause of the following exception:
+E   sqlalchemy.exc.IntegrityError: (sqlite3.IntegrityError) NOT NULL constraint failed: system.version
+    [SQL: INSERT INTO system (version, "lastUpdated") VALUES (?, ?)]
+    [parameters: (None, None)]
+    (Background on this error at: https://sqlalche.me/e/20/gkpj)
+E:\Uni data\FYP\integrow\projects\shuja609\test\.venv\Lib\site-packages\sqlalchemy\engine\default.py:952: sqlalchemy.exc.IntegrityError: (sqlite3.IntegrityError) NOT NULL constraint failed: system.version
+E   sqlite3.IntegrityError: NOT NULL constraint failed: system.version
+
+The above exception was the direct cause of the following exception:
+E   sqlalchemy.exc.IntegrityError: (sqlite3.IntegrityError) NOT NULL constraint failed: system.version
+    [SQL: INSERT INTO system (version, "lastUpdated") VALUES (?, ?)]
+    [parameters: (None, None)]
+    (Background on this error at: https://sqlalche.me/e/20/gkpj)
+E:\Uni data\FYP\integrow\projects\shuja609\test\.venv\Lib\site-packages\sqlalchemy\engine\default.py:952: sqlalchemy.exc.IntegrityError: (sqlite3.IntegrityError) NOT NULL constraint failed: system.version
+E   sqlite3.IntegrityError: NOT NULL constraint failed: system.version
+
+The above exception was the direct cause of the following exception:
+E   sqlalchemy.exc.IntegrityError: (sqlite3.IntegrityError) NOT NULL constraint failed: system.version
+    [SQL: INSERT INTO system (version, "lastUpdated") VALUES (?, ?)]
+    [parameters: (None, None)]
+    (Background on this error at: https://sqlalche.me/e/20/gkpj)
+E:\Uni data\FYP\integrow\projects\shuja609\test\.venv\Lib\site-packages\sqlalchemy\engine\default.py:952: sqlalchemy.exc.IntegrityError: (sqlite3.IntegrityError) NOT NULL constraint failed: system.version
+E   sqlite3.IntegrityError: NOT NULL constraint failed: system.version
+
+The above exception was the direct cause of the following exception:
+E   sqlalchemy.exc.IntegrityError: (sqlite3.IntegrityError) NOT NULL constraint failed: system.version
+    [SQL: INSERT INTO system (version, "lastUpdated") VALUES (?, ?)]
+    [parameters: (None, None)]
+    (Background on this error at: https://sqlalche.me/e/20/gkpj)
+E:\Uni data\FYP\integrow\projects\shuja609\test\.venv\Lib\site-packages\sqlalchemy\engine\default.py:952: sqlalchemy.exc.IntegrityError: (sqlite3.IntegrityError) NOT NULL constraint failed: system.version
+E   sqlite3.IntegrityError: NOT NULL constraint failed: system.version
+
+The above exception was the direct cause of the following exception:
+E   sqlalchemy.exc.IntegrityError: (sqlite3.IntegrityError) NOT NULL constraint failed: system.version
+    [SQL: INSERT INTO system (version, "lastUpdated") VALUES (?, ?)]
+    [parameters: (None, None)]
+    (Background on this error at: https://sqlalche.me/e/20/gkpj)
+E:\Uni data\FYP\integrow\projects\shuja609\test\.venv\Lib\site-packages\sqlalchemy\engine\default.py:952: sqlalchemy.exc.IntegrityError: (sqlite3.IntegrityError) NOT NULL constraint failed: system.version
+E   sqlite3.ProgrammingError: Error binding parameter 1: type 'UUID' is not supported
+
+The above exception was the direct cause of the following exception:
+E   sqlalchemy.exc.ProgrammingError: (sqlite3.ProgrammingError) Error binding parameter 1: type 'UUID' is not supported
+    [SQL: SELECT system.id AS system_id, system.version AS system_version, system."lastUpdated" AS "system_lastUpdated" 
+    FROM system 
+    WHERE system.id = ?]
+    [parameters: (UUID('00000000-0000-0000-0000-000000000000'),)]
+    (Background on this error at: https://sqlalche.me/e/20/f405)
+E:\Uni data\FYP\integrow\projects\shuja609\test\.venv\Lib\site-packages\sqlalchemy\engine\default.py:952: sqlalchemy.exc.ProgrammingError: (sqlite3.ProgrammingError) Error binding parameter 1: type 'UUID' is not supported
+E   sqlite3.ProgrammingError: Error binding parameter 1: type 'UUID' is not supported
+
+The above exception was the direct cause of the following exception:
+E   sqlalchemy.exc.ProgrammingError: (sqlite3.ProgrammingError) Error binding parameter 1: type 'UUID' is not supported
+    [SQL: SELECT system.id AS system_id, system.version AS system_version, system."lastUpdated" AS "system_lastUpdated" 
+    FROM system 
+    WHERE system.id = ?]
+    [parameters: (UUID('00000000-0000-0000-0000-000000000000'),)]
+    (Background on this error at: https://sqlalche.me/e/20/f405)
+E:\Uni data\FYP\integrow\projects\shuja609\test\.venv\Lib\site-packages\sqlalchemy\engine\default.py:952: sqlalchemy.exc.ProgrammingError: (sqlite3.ProgrammingError) Error binding parameter 1: type 'UUID' is not supported
+E   sqlite3.ProgrammingError: Error binding parameter 1: type 'UUID' is not supported
+
+The above exception was the direct cause of the following exception:
+E   sqlalchemy.exc.ProgrammingError: (sqlite3.ProgrammingError) Error binding parameter 1: type 'UUID' is not supported
+    [SQL: SELECT system.id AS system_id, system.version AS system_version, system."lastUpdated" AS "system_lastUpdated" 
+    FROM system 
+    WHERE system.id = ?]
+    [parameters: (UUID('00000000-0000-0000-0000-000000000000'),)]
+    (Background on this error at: https://sqlalche.me/e/20/f405)
+E:\Uni data\FYP\integrow\projects\shuja609\test\.venv\Lib\site-packages\sqlalchemy\engine\default.py:952: sqlalchemy.exc.ProgrammingError: (sqlite3.ProgrammingError) Error binding parameter 1: type 'UUID' is not supported
+E   sqlite3.IntegrityError: NOT NULL constraint failed: system.version
+
+The above exception was the direct cause of the following exception:
+E   sqlalchemy.exc.IntegrityError: (sqlite3.IntegrityError) NOT NULL constraint failed: system.version
+    [SQL: INSERT INTO system (version, "lastUpdated") VALUES (?, ?)]
+    [parameters: (None, None)]
+    (Background on this error at: https://sqlalche.me/e/20/gkpj)
+E:\Uni data\FYP\integrow\projects\shuja609\test\.venv\Lib\site-packages\sqlalchemy\engine\default.py:952: sqlalchemy.exc.IntegrityError: (sqlite3.IntegrityError) NOT NULL constraint failed: system.version
+E   sqlite3.IntegrityError: NOT NULL constraint failed: system.version
+
+The above exception was the direct cause of the following exception:
+E   sqlalchemy.exc.IntegrityError: (sqlite3.IntegrityError) NOT NULL constraint failed: system.version
+    [SQL: INSERT INTO system (version, "lastUpdated") VALUES (?, ?)]
+    [parameters: (None, None)]
+    (Background on this error at: https://sqlalche.me/e/20/gkpj)
+E:\Uni data\FYP\integrow\projects\shuja609\test\.venv\Lib\site-packages\sqlalchemy\engine\default.py:952: sqlalchemy.exc.IntegrityError: (sqlite3.IntegrityError) NOT NULL constraint failed: system.version
+E   sqlite3.IntegrityError: NOT NULL constraint failed: system.version
+
+The above exception was the direct cause of the following exception:
+E   sqlalchemy.exc.IntegrityError: (sqlite3.IntegrityError) NOT NULL constraint failed: system.version
+    [SQL: INSERT INTO system (version, "lastUpdated") VALUES (?, ?)]
+    [parameters: (None, None)]
+    (Background on this error at: https://sqlalche.me/e/20/gkpj)
+E:\Uni data\FYP\integrow\projects\shuja609\test\.venv\Lib\site-packages\sqlalchemy\engine\default.py:952: sqlalchemy.exc.IntegrityError: (sqlite3.IntegrityError) NOT NULL constraint failed: system.version
+E   sqlite3.IntegrityError: NOT NULL constraint failed: system.version
+
+The above exception was the direct cause of the following exception:
+E   sqlalchemy.exc.IntegrityError: (sqlite3.IntegrityError) NOT NULL constraint failed: system.version
+    [SQL: INSERT INTO system (version, "lastUpdated") VALUES (?, ?)]
+    [parameters: (None, None)]
+    (Background on this error at: https://sqlalche.me/e/20/gkpj)
+E:\Uni data\FYP\integrow\projects\shuja609\test\.venv\Lib\site-packages\sqlalchemy\engine\default.py:952: sqlalchemy.exc.IntegrityError: (sqlite3.IntegrityError) NOT NULL constraint failed: system.version
+============================== warnings summary ===============================
+app\core\config.py:4
+  E:\Uni data\FYP\integrow\projects\shuja609\test\app\core\config.py:4: PydanticDeprecatedSince20: Support for class-based `config` is deprecated, use ConfigDict instead. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.12/migration/
+    class Settings(BaseSettings):
+
+tests/models/test_system.py::test_system_crud
+tests/models/test_system.py::test_update_system_function
+  E:\\Uni data\\FYP\\integrow\\projects\\shuja609\\test\\app\\models\\system.py:58: DeprecationWarning: \n          \U0001f6a8 `obj.dict()` was deprecated in SQLModel 0.0.14, you should\n          instead use `obj.model_dump()`.\n          \n    for key, value in system.dict(exclude_unset=True).items():
+
+tests/models/test_system.py::test_system_crud
+  E:\\Uni data\\FYP\\integrow\\projects\\shuja609\\test\\tests\\models\\test_system.py:58: DeprecationWarning: \n          \U0001f6a8 You probably want to use `session.exec()` instead of `session.query()`.\n  \n          `session.exec()` is SQLModel's own short version with increased type\n          annotations.\n  \n          Or otherwise you might want to use `session.execute()` instead of\n          `session.query()`.\n          \n    session.query(System).filter(System.id == created_system.id).delete()
+
+tests/models/test_system.py::test_system_crud
+  E:\\Uni data\\FYP\\integrow\\projects\\shuja609\\test\\tests\\models\\test_system.py:60: DeprecationWarning: \n          \U0001f6a8 You probably want to use `session.exec()` instead of `session.query()`.\n  \n          `session.exec()` is SQLModel's own short version with increased type\n          annotations.\n  \n          Or otherwise you might want to use `session.execute()` instead of\n          `session.query()`.\n          \n    assert session.query(System).filter(System.id == created_system.id).first() is None
+
+tests/services/test_inventory_service.py::test_get_summary
+  E:\\Uni data\\FYP\\integrow\\projects\\shuja609\\test\\app\\services\\inventory_service.py:77: DeprecationWarning: \n          \U0001f6a8 You probably want to use `session.exec()` instead of `session.query()`.\n  \n          `session.exec()` is SQLModel's own short version with increased type\n          annotations.\n  \n          Or otherwise you might want to use `session.execute()` instead of\n          `session.query()`.\n          \n    total_items = self.session.query(Inventory).count()
+
+tests/services/test_inventory_service.py::test_get_summary
+  E:\\Uni data\\FYP\\integrow\\projects\\shuja609\\test\\app\\services\\inventory_service.py:78: DeprecationWarning: \n          \U0001f6a8 You probably want to use `session.exec()` instead of `session.query()`.\n  \n          `session.exec()` is SQLModel's own short version with increased type\n          annotations.\n  \n          Or otherwise you might want to use `session.execute()` instead of\n          `session.query()`.\n          \n    categories = self.session.query(Inventory.category).distinct().all()
+
+tests/services/test_item_service.py::test_get_item_summary
+  E:\\Uni data\\FYP\\integrow\\projects\\shuja609\\test\\app\\services\\item_service.py:90: DeprecationWarning: \n          \U0001f6a8 You probably want to use `session.exec()` instead of `session.query()`.\n  \n          `session.exec()` is SQLModel's own short version with increased type\n          annotations.\n  \n          Or otherwise you might want to use `session.execute()` instead of\n          `session.query()`.\n          \n    total_items = self.session.query(Item).count()
+
+tests/services/test_item_service.py::test_get_item_summary
+tests/services/test_item_service.py::test_get_item_summary
+tests/services/test_item_service.py::test_get_item_summary
+tests/services/test_item_service.py::test_get_item_summary
+tests/services/test_item_service.py::test_get_item_summary
+  E:\\Uni data\\FYP\\integrow\\projects\\shuja609\\test\\app\\services\\item_service.py:93: DeprecationWarning: \n          \U0001f6a8 You probably want to use `session.exec()` instead of `session.query()`.\n  \n          `session.exec()` is SQLModel's own short version with increased type\n          annotations.\n  \n          Or otherwise you might want to use `session.execute()` instead of\n          `session.query()`.\n          \n    category_items = self.session.query(Item).filter(Item.category == category).count()
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ===========================
+FAILED tests/api/test_category_router.py::test_create_category - assert 404 =...
+FAILED tests/api/test_category_router.py::test_get_category - KeyError: 'id'
+FAILED tests/api/test_category_router.py::test_list_categories - assert 404 =...
+FAILED tests/api/test_category_router.py::test_update_category - KeyError: 'id'
+FAILED tests/api/test_category_router.py::test_delete_category - KeyError: 'id'
+FAILED tests/api/test_category_router.py::test_create_category_invalid_data
+FAILED tests/api/test_category_router.py::test_create_category_missing_required_field
+FAILED tests/api/test_category_router.py::test_update_category_invalid_data
+FAILED tests/models/test_category.py::test_create_category_defaults - Attribu...
+FAILED tests/models/test_category.py::test_create_category_unique_constraint
+FAILED tests/models/test_category.py::test_update_category - AttributeError: ...
+FAILED tests/models/test_category.py::test_delete_category - AttributeError: ...
+FAILED tests/models/test_category.py::test_get_categories - AttributeError: g...
+FAILED tests/models/test_category.py::test_create_category - AttributeError: ...
+FAILED tests/models/test_category.py::test_category_str_repr - AttributeError...
+FAILED tests/models/test_category.py::test_category_constraints - AttributeEr...
+FAILED tests/models/test_category.py::test_category_invalid_name - Failed: DI...
+FAILED tests/models/test_category.py::test_category_name_length - Failed: DID...
+FAILED tests/models/test_error.py::test_error_defaults - AttributeError: 'gen...
+FAILED tests/models/test_error.py::test_create_error - fastapi.exceptions.HTT...
+FAILED tests/models/test_error.py::test_get_error_by_message - fastapi.except...
+FAILED tests/models/test_error.py::test_handle_validation_error - NameError: ...
+FAILED tests/models/test_error.py::test_handle_duplicate_error - fastapi.exce...
+FAILED tests/models/test_error.py::test_create_error_duplicate - fastapi.exce...
+FAILED tests/models/test_error.py::test_field_validation - Failed: DID NOT RA...
+FAILED tests/models/test_error.py::test_table_constraints - fastapi.exception...
+FAILED tests/models/test_error.py::test_crud - AttributeError: 'generator' ob...
+FAILED tests/models/test_inventory.py::test_inventory_defaults - sqlalchemy.e...
+FAILED tests/models/test_inventory.py::test_inventory_create_item - sqlalchem...
+FAILED tests/models/test_inventory.py::test_inventory_update_item - sqlalchem...
+FAILED tests/models/test_inventory.py::test_inventory_retrieve_item - sqlalch...
+FAILED tests/models/test_inventory.py::test_inventory_get_summary - sqlalchem...
+FAILED tests/models/test_inventory.py::test_inventory_filter_items - sqlalche...
+FAILED tests/models/test_inventory.py::test_inventory_unique_item_name - sqla...
+FAILED tests/models/test_inventory.py::test_inventory_add_item_with_invalid_name
+FAILED tests/models/test_inventory.py::test_inventory_item_quantity - sqlalch...
+FAILED tests/models/test_item.py::test_item_defaults - TypeError: __init__() ...
+FAILED tests/models/test_item.py::test_item_field_validation - TypeError: __i...
+FAILED tests/models/test_item.py::test_item_table_constraints - TypeError: __...
+FAILED tests/models/test_item.py::test_item_relationships - TypeError: __init...
+FAILED tests/models/test_item.py::test_item_cud - TypeError: __init__() takes...
+FAILED tests/models/test_item.py::test_item_delete - TypeError: __init__() ta...
+FAILED tests/models/test_item.py::test_inventory_cud - TypeError: __init__() ...
+FAILED tests/models/test_user.py::test_user_field_validation - NameError: nam...
+FAILED tests/models/test_user.py::test_user_unique_constraint - sqlalchemy.ex...
+FAILED tests/models/test_user.py::test_create_user - NameError: name 'UserSer...
+FAILED tests/models/test_user.py::test_read_user - sqlalchemy.exc.IntegrityEr...
+FAILED tests/models/test_user.py::test_update_user - sqlalchemy.exc.Integrity...
+FAILED tests/models/test_user.py::test_delete_user - sqlalchemy.exc.Integrity...
+FAILED tests/services/test_category_service.py::test_get_non_existent_category
+FAILED tests/services/test_category_service.py::test_update_non_existent_category
+FAILED tests/services/test_category_service.py::test_delete_non_existent_category
+FAILED tests/services/test_error_service.py::test_delete_item_while_active - ...
+FAILED tests/services/test_error_service.py::test_create_item_with_empty_name
+FAILED tests/services/test_error_service.py::test_create_item_with_negative_quantity
+FAILED tests/services/test_error_service.py::test_get_item_with_invalid_id - ...
+FAILED tests/services/test_error_service.py::test_create_item_persists_to_database
+FAILED tests/services/test_error_service.py::test_create_item_with_invalid_data
+FAILED tests/services/test_error_service.py::test_update_item_with_invalid_data
+FAILED tests/services/test_error_service.py::test_validate_item - TypeError: ...
+FAILED tests/services/test_error_service.py::test_validate_item_with_invalid_data
+FAILED tests/services/test_error_service.py::test_validate_unique_item - fast...
+FAILED tests/services/test_error_service.py::test_validate_unique_item_with_invalid_data
+FAILED tests/services/test_error_service.py::test_handle_system_error - NameE...
+FAILED tests/services/test_inventory_service.py::test_get_item - sqlalchemy.e...
+FAILED tests/services/test_inventory_service.py::test_update_item - sqlalchem...
+FAILED tests/services/test_inventory_service.py::test_delete_item - sqlalchem...
+FAILED tests/services/test_item_service.py::test_get_item_not_found - Failed:...
+FAILED tests/services/test_item_service.py::test_delete_item - Failed: DID NO...
+FAILED tests/services/test_system_service.py::test_create_system - sqlalchemy...
+FAILED tests/services/test_system_service.py::test_get_system - sqlalchemy.ex...
+FAILED tests/services/test_system_service.py::test_list_systems - sqlalchemy....
+FAILED tests/services/test_system_service.py::test_update_system - sqlalchemy...
+FAILED tests/services/test_system_service.py::test_delete_system - sqlalchemy...
+FAILED tests/services/test_system_service.py::test_get_nonexistent_system - s...
+FAILED tests/services/test_system_service.py::test_update_nonexistent_system
+FAILED tests/services/test_system_service.py::test_delete_nonexistent_system
+FAILED tests/services/test_system_service.py::test_create_system_with_empty_name
+FAILED tests/services/test_system_service.py::test_create_system_with_empty_description
+FAILED tests/services/test_system_service.py::test_update_system_with_empty_name
+FAILED tests/services/test_system_service.py::test_update_system_with_empty_description
+81 failed, 43 passed, 13 warnings in 1.55s
