@@ -1,76 +1,50 @@
-import pytest
-from app.models.system import System, SystemBase, SystemCreate, SystemUpdate, create_system, update_system, read_system
+# tests/test_system.py
 from datetime import datetime
-from pydantic import ValidationError
+import pytest
+from app.core.database import get_session
+from app.models.system import System, SystemCreate, SystemUpdate, SystemRead, create_system, update_system, read_system
 
+@pytest.fixture
+def session():
+    return get_session()
 
-def test_system_model_field_validation():
-    """Test SystemBase schema validation."""
-    system = SystemBase(version="v1", lastUpdated=datetime.now())
-    assert isinstance(system.version, str)
+def test_system_create_defaults(session):
+    system = SystemCreate(version="1.0", lastUpdated=datetime.utcnow())
+    db_system = create_system(session, system)
+    session.refresh(db_system)
+    assert db_system.version == "1.0"
+    assert db_system.lastUpdated is not None
 
-    # version is required
-    with pytest.raises((TypeError, ValidationError)):
-        SystemBase(lastUpdated=datetime.now())
+def test_system_update_defaults(session):
+    system = SystemCreate(version="1.0", lastUpdated=datetime.utcnow())
+    db_system = create_system(session, system)
+    updated_system = SystemUpdate(version="2.0", lastUpdated=datetime.utcnow())
+    db_system = update_system(session, db_system.id, updated_system)
+    session.refresh(db_system)
+    assert db_system.version == "2.0"
+    assert db_system.lastUpdated is not None
 
+def test_system_create_and_read(session):
+    system = SystemCreate(version="1.0", lastUpdated=datetime.utcnow())
+    db_system = create_system(session, system)
+    read_system_result = read_system(session, db_system.id)
+    assert read_system_result.id == db_system.id
+    assert read_system_result.version == db_system.version
+    assert read_system_result.lastUpdated == db_system.lastUpdated
 
-def test_system_defaults(session):
-    """Test that System gets auto-generated int id."""
-    system = SystemCreate(version="v1", lastUpdated=datetime.now())
-    system_obj = create_system(session, system)
-    assert isinstance(system_obj.id, int)
+def test_system_create_duplicate(session):
+    system = SystemCreate(version="1.0", lastUpdated=datetime.utcnow())
+    db_system1 = create_system(session, system)
+    with pytest.raises(SystemError):
+        create_system(session, system)
 
+def test_system_update_unknown(session):
+    system = SystemCreate(version="1.0", lastUpdated=datetime.utcnow())
+    db_system = create_system(session, system)
+    updated_system = SystemUpdate(version="2.0", lastUpdated=datetime.utcnow())
+    with pytest.raises(SystemError):
+        update_system(session, db_system.id + 1, updated_system)
 
-def test_system_crud(session):
-    """Test full CRUD cycle using model-level functions."""
-    now = datetime.now()
-    # Create
-    system = SystemCreate(version="v1", lastUpdated=now)
-    created = create_system(session, system)
-    assert isinstance(created, System)
-    assert created.version == "v1"
-
-    # Read
-    read_obj = read_system(session, created.id)
-    assert isinstance(read_obj, System)
-    assert read_obj.id == created.id
-
-    # Update
-    updated_data = SystemUpdate(version="v2", lastUpdated=datetime.now())
-    updated = update_system(session, created.id, updated_data)
-    assert isinstance(updated, System)
-    assert updated.version == "v2"
-
-    # Delete
-    session.delete(updated)
-    session.commit()
-    assert session.get(System, created.id) is None
-
-
-def test_create_system_function(session):
-    """Test create_system doesn't raise."""
-    system = SystemCreate(version="v1", lastUpdated=datetime.now())
-    result = create_system(session, system)
-    assert result.id is not None
-
-
-def test_read_system_function(session):
-    """Test read_system returns created system."""
-    system = SystemCreate(version="v1", lastUpdated=datetime.now())
-    created = create_system(session, system)
-    result = read_system(session, created.id)
-    assert result.version == "v1"
-
-
-def test_update_system_function(session):
-    """Test update_system works."""
-    system = SystemCreate(version="v1", lastUpdated=datetime.now())
-    created = create_system(session, system)
-    updated_data = SystemUpdate(version="v2", lastUpdated=datetime.now())
-    result = update_system(session, created.id, updated_data)
-    assert result.version == "v2"
-
-
-def test_system_relationships(session):
-    """No relationships to test."""
-    pass
+def test_system_read_unknown(session):
+    with pytest.raises(SystemError):
+        read_system(session, 1)

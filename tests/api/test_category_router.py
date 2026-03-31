@@ -1,65 +1,111 @@
-from app.models.category import Category
 import pytest
-from uuid import uuid4
+import uuid
+from fastapi import status
+from fastapi.testclient import TestClient
+from app.core.database import get_session
+from app.models.category import Category
+from app.api.v1.endpoints import router
 
+# Use router in the client instance to include its routes
+client = TestClient(router)
 
 def test_create_category(client, session):
-    """Test creating a category via API."""
-    resp = client.post("/api/v1/category/", json={"name": "Test Category"})
-    assert resp.status_code == 200
-    data = resp.json()
-    assert data["name"] == "Test Category"
-    assert data["id"] is not None
-
+    """Test creation of a category"""
+    category_data = {
+        "name": "Test Category",
+        "description": "This is a test category"
+    }
+    resp = client.post("/category/", json=category_data)
+    assert resp.status_code == 201
+    assert resp.json()["name"] == category_data["name"]
+    assert resp.json()["description"] == category_data["description"]
+    # Verify DB
+    category_id = resp.json()["id"]
+    assert session.get(Category, category_id) is not None
 
 def test_get_category(client, session):
-    """Test getting a category via API."""
-    resp = client.post("/api/v1/category/", json={"name": "Test Category"})
-    cat_id = resp.json()["id"]
-    resp = client.get(f"/api/v1/category/{cat_id}")
+    """Test retrieval of a category by ID"""
+    category = Category(name="Test Category", description="This is a test category")
+    session.add(category)
+    session.commit()
+    session.refresh(category)
+    resp = client.get(f"/category/{category.id}")
     assert resp.status_code == 200
-    assert resp.json()["name"] == "Test Category"
-
+    assert resp.json()["name"] == category.name
+    assert resp.json()["description"] == category.description
 
 def test_list_categories(client, session):
-    """Test listing categories via API."""
-    client.post("/api/v1/category/", json={"name": "Cat 1"})
-    client.post("/api/v1/category/", json={"name": "Cat 2"})
-    resp = client.get("/api/v1/category/")
+    """Test listing of all categories"""
+    category1 = Category(name="Test Category 1", description="This is a test category 1")
+    category2 = Category(name="Test Category 2", description="This is a test category 2")
+    session.add_all([category1, category2])
+    session.commit()
+    session.refresh(category1)
+    session.refresh(category2)
+    resp = client.get("/category/")
     assert resp.status_code == 200
     assert len(resp.json()) == 2
-
+    category_ids = [c["id"] for c in resp.json()]
+    assert category1.id in category_ids
+    assert category2.id in category_ids
 
 def test_update_category(client, session):
-    """Test updating a category via API."""
-    resp = client.post("/api/v1/category/", json={"name": "Original"})
-    cat_id = resp.json()["id"]
-    resp = client.put(f"/api/v1/category/{cat_id}", json={"name": "Updated"})
+    """Test updating of a category"""
+    category = Category(name="Test Category", description="This is a test category")
+    session.add(category)
+    session.commit()
+    session.refresh(category)
+    updated_category_data = {
+        "name": "Updated Test Category",
+        "description": "This is an updated test category"
+    }
+    resp = client.put(f"/category/{category.id}", json=updated_category_data)
     assert resp.status_code == 200
-    assert resp.json()["name"] == "Updated"
-
+    assert resp.json()["name"] == updated_category_data["name"]
+    assert resp.json()["description"] == updated_category_data["description"]
+    # Verify DB
+    updated_category = session.get(Category, category.id)
+    assert updated_category.name == updated_category_data["name"]
+    assert updated_category.description == updated_category_data["description"]
 
 def test_delete_category(client, session):
-    """Test deleting a category via API."""
-    resp = client.post("/api/v1/category/", json={"name": "To Delete"})
-    cat_id = resp.json()["id"]
-    resp = client.delete(f"/api/v1/category/{cat_id}")
+    """Test deletion of a category"""
+    category = Category(name="Test Category", description="This is a test category")
+    session.add(category)
+    session.commit()
+    session.refresh(category)
+    resp = client.delete(f"/category/{category.id}")
     assert resp.status_code == 204
+    # Verify DB
+    assert session.get(Category, category.id) is None
 
+def test_create_category_invalid_data(client, session):
+    """Test creation of a category with invalid data"""
+    category_data = {
+        "name": None,  # Invalid name
+        "description": "This is a test category"
+    }
+    resp = client.post("/category/", json=category_data)
+    assert resp.status_code == 422
 
-def test_get_nonexistent_category(client, session):
-    """Test getting a non-existent category returns error."""
-    resp = client.get(f"/api/v1/category/{uuid4()}")
-    assert resp.status_code in (404, 500)
+def test_get_category_not_found(client, session):
+    """Test retrieval of a non-existent category"""
+    random_id = uuid.uuid4()
+    resp = client.get(f"/category/{random_id}")
+    assert resp.status_code == 404
 
+def test_update_category_not_found(client, session):
+    """Test updating of a non-existent category"""
+    random_id = uuid.uuid4()
+    updated_category_data = {
+        "name": "Updated Test Category",
+        "description": "This is an updated test category"
+    }
+    resp = client.put(f"/category/{random_id}", json=updated_category_data)
+    assert resp.status_code == 404
 
-def test_delete_nonexistent_category(client, session):
-    """Test deleting a non-existent category returns error."""
-    resp = client.delete(f"/api/v1/category/{uuid4()}")
-    assert resp.status_code in (404, 500)
-
-
-def test_create_category_missing_required_field(client, session):
-    """Test creating category without required name field."""
-    resp = client.post("/api/v1/category/", json={})
-    assert resp.status_code in (422, 500)  # router may catch IntegrityError as 500
+def test_delete_category_not_found(client, session):
+    """Test deletion of a non-existent category"""
+    random_id = uuid.uuid4()
+    resp = client.delete(f"/category/{random_id}")
+    assert resp.status_code == 404

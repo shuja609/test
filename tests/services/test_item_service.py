@@ -1,118 +1,107 @@
-from app.services.item_service import ItemService
+import pytest
+from app.core.database import get_session
 from app.exceptions import InvalidCategoryError, ItemNotFoundError
 from app.models.item import Item, CATEGORIES
-import pytest
-
+from app.services.item_service import ItemService
 
 @pytest.fixture
-def item_service(session):
+async def session():
+    async with get_session() as session:
+        yield session
+
+@pytest.fixture
+async def item_service(session):
     return ItemService(session)
 
-
-async def test_create_item_valid(item_service):
-    """Test creating a valid item."""
-    item = Item(name="Test Item", category=CATEGORIES[0], description="Test desc")
-    created = await item_service.create(item)
-    assert created.name == "Test Item"
-    assert created.category == CATEGORIES[0]
-    assert created.id is not None
-
+async def test_create_item_valid_category(item_service):
+    item = Item(name="Test Item", category=CATEGORIES[0])
+    created_item = await item_service.create(item)
+    assert created_item.name == item.name
+    assert created_item.category == item.category
 
 async def test_create_item_invalid_category(item_service):
-    """Test creating item with invalid category."""
-    item = Item(name="Test Item", category="Invalid Category", description="Test")
+    item = Item(name="Test Item", category="Invalid Category")
     with pytest.raises(InvalidCategoryError, match="Invalid category"):
         await item_service.create(item)
 
-
-async def test_create_item_empty_name(item_service):
-    """Test creating item with empty name (allowed by model)."""
-    item = Item(name="", category=CATEGORIES[0], description="Test")
-    result = await item_service.create(item)
-    assert result.name == ""
-
-
 async def test_get_item(item_service):
-    """Test getting an item by ID."""
-    item = Item(name="Test Item", category=CATEGORIES[0], description="Test")
-    created = await item_service.create(item)
-    retrieved = await item_service.get(created.id)
-    assert retrieved is not None
-    assert retrieved.name == "Test Item"
-
+    item = Item(name="Test Item", category=CATEGORIES[0])
+    await item_service.session.add(item)
+    await item_service.session.commit()
+    await item_service.session.refresh(item)
+    db_item = await item_service.get(item.id)
+    assert db_item.name == item.name
+    assert db_item.category == item.category
 
 async def test_get_item_not_found(item_service):
-    """Test getting non-existent item returns None."""
-    from uuid import uuid4
-    result = await item_service.get(uuid4())
-    assert result is None
-
+    db_item = await item_service.get(UUID("00000000-0000-0000-0000-000000000000"))
+    assert db_item is None
 
 async def test_list_items(item_service):
-    """Test listing items."""
-    await item_service.create(Item(name="Item 1", category=CATEGORIES[0], description="D1"))
-    await item_service.create(Item(name="Item 2", category=CATEGORIES[0], description="D2"))
+    for i in range(10):
+        item = Item(name=f"Test Item {i}", category=CATEGORIES[0])
+        await item_service.session.add(item)
+    await item_service.session.commit()
     items = await item_service.list()
-    assert len(items) >= 2
+    assert len(items) == 10
 
-
-async def test_update_item_valid(item_service):
-    """Test updating an item."""
-    item = Item(name="Original", category=CATEGORIES[0], description="Test")
-    created = await item_service.create(item)
-    updated = await item_service.update(created.id, {"name": "Updated"})
-    assert updated.name == "Updated"
-
+async def test_update_item(item_service):
+    item = Item(name="Test Item", category=CATEGORIES[0])
+    await item_service.session.add(item)
+    await item_service.session.commit()
+    await item_service.session.refresh(item)
+    updated_item = await item_service.update(item.id, {"name": "Updated Item"})
+    assert updated_item.name == "Updated Item"
 
 async def test_update_item_invalid_category(item_service):
-    """Test updating item with invalid category."""
-    item = Item(name="Test", category=CATEGORIES[0], description="Test")
-    created = await item_service.create(item)
+    item = Item(name="Test Item", category=CATEGORIES[0])
+    await item_service.session.add(item)
+    await item_service.session.commit()
+    await item_service.session.refresh(item)
     with pytest.raises(InvalidCategoryError, match="Invalid category"):
-        await item_service.update(created.id, {"category": "Invalid"})
-
+        await item_service.update(item.id, {"category": "Invalid Category"})
 
 async def test_delete_item(item_service):
-    """Test deleting an item."""
-    item = Item(name="To Delete", category=CATEGORIES[0], description="Test")
-    created = await item_service.create(item)
-    deleted = await item_service.delete(created.id)
-    assert deleted is True
+    item = Item(name="Test Item", category=CATEGORIES[0])
+    await item_service.session.add(item)
+    await item_service.session.commit()
+    await item_service.session.refresh(item)
+    deleted = await item_service.delete(item.id)
+    assert deleted
 
+async def test_delete_item_not_found(item_service):
+    with pytest.raises(ItemNotFoundError, match="Item not found"):
+        await item_service.delete(UUID("00000000-0000-0000-0000-000000000000"))
 
 async def test_filter_items_by_name(item_service):
-    """Test filtering items by name."""
-    await item_service.create(Item(name="Test Item 1", category=CATEGORIES[0], description="D1"))
-    await item_service.create(Item(name="Test Item 2", category=CATEGORIES[0], description="D2"))
-    results = await item_service.filter(name="Test Item 1")
-    assert len(results) >= 1
-
+    item1 = Item(name="Test Item 1", category=CATEGORIES[0])
+    item2 = Item(name="Test Item 2", category=CATEGORIES[0])
+    await item_service.session.add_all([item1, item2])
+    await item_service.session.commit()
+    items = await item_service.filter(name="Item 1")
+    assert len(items) == 1
 
 async def test_filter_items_by_category(item_service):
-    """Test filtering items by category."""
-    await item_service.create(Item(name="Item 1", category=CATEGORIES[0], description="D1"))
-    await item_service.create(Item(name="Item 2", category=CATEGORIES[1], description="D2"))
-    results = await item_service.filter(category=CATEGORIES[0])
-    assert len(results) >= 1
-
-
-async def test_filter_items_invalid_category(item_service):
-    """Test filtering with invalid category."""
-    with pytest.raises(InvalidCategoryError, match="Invalid category"):
-        await item_service.filter(category="Invalid Category")
-
+    item1 = Item(name="Test Item 1", category=CATEGORIES[0])
+    item2 = Item(name="Test Item 2", category=CATEGORIES[1])
+    await item_service.session.add_all([item1, item2])
+    await item_service.session.commit()
+    items = await item_service.filter(category=CATEGORIES[0])
+    assert len(items) == 1
 
 async def test_get_categories(item_service):
-    """Test getting categories list."""
     categories = await item_service.get_categories()
-    assert len(categories) == len(CATEGORIES)
-
+    assert categories == CATEGORIES
 
 async def test_get_item_summary(item_service):
-    """Test getting item summary."""
-    await item_service.create(Item(name="Item 1", category=CATEGORIES[0], description="D1"))
-    await item_service.create(Item(name="Item 2", category=CATEGORIES[1], description="D2"))
+    for i in range(10):
+        item = Item(name=f"Test Item {i}", category=CATEGORIES[0])
+        await item_service.session.add(item)
+    for i in range(5):
+        item = Item(name=f"Test Item {i}", category=CATEGORIES[1])
+        await item_service.session.add(item)
+    await item_service.session.commit()
     summary = await item_service.get_item_summary()
-    assert summary["total_items"] >= 2
-    assert summary["categories"][CATEGORIES[0]] >= 1
-    assert summary["categories"][CATEGORIES[1]] >= 1
+    assert summary["total_items"] == 15
+    assert summary["categories"][CATEGORIES[0]] == 10
+    assert summary["categories"][CATEGORIES[1]] == 5
